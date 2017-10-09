@@ -45,3 +45,8 @@ git只能跟踪文本文件的改动
    rm 文件
    彻底从版本库中删掉了此文件，可以再执行commit命令，提交掉。
 
+11.把本地仓库的内容推送到GitHub仓库
+   a.进入github远程库
+   git remote add origin github仓库地址（https/ssh）
+   b.把本地库的内容推送到远程
+   git push (-u第一次时使用) origin 分支
