@@ -1,0 +1,52 @@
+git只能跟踪文本文件的改动
+
+1.把当前目录变成git可以管理的仓库
+  git init
+
+2.提交修改和提交文件两步
+  a.添加文件到管理仓库的（暂存区）
+  git add 文件
+  b.提交文件到仓库的（当前分支）	
+  git commit -m '提交的注释'
+
+3.查看当前库状态
+  git status
+
+4.查看文件修改内容
+  git diff 文件
+
+5.查看库历史记录
+  git log
+  精简查看
+  git log –pretty=oneline
+
+6.版本回退
+  git reset –hard HEAD
+  第一种：
+  上一个版本
+  git reset –hard HEAD^
+  上上个(以此类推)
+  git reset –hard HEAD^^
+  第二种：
+  回退到前100个版本
+  git reset –hard HEAD~100
+
+7.查看版本号
+  git reflog
+
+8.回到指定版本
+  git reset –hard 版本号
+
+9.(未提交前)撤销修改
+  git checkout  — 文件
+  注意：命令git checkout — 文件 中的 — 很重要，如果没有 — 的话，那么命令变成创建分支了。
+
+10.删除文件
+   rm 文件
+   彻底从版本库中删掉了此文件，可以再执行commit命令，提交掉。
+
+11.把本地仓库的内容推送到GitHub仓库
+   a.进入github远程库
+   git remote add origin github仓库地址（https/ssh）
+   b.把本地库的内容推送到远程
+   git push (-u第一次时使用) origin 分支
